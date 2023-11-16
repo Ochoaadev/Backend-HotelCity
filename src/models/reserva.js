@@ -2,10 +2,10 @@ const mongoose = require('mongoose')
 
 const reserva = new mongoose.Schema(
     {
-        DNI:{
+        Cedula:{
             type: String
         },
-        Nombre_Completo:{
+        Name:{
             type:String,
             required: true
         },
@@ -19,6 +19,31 @@ const reserva = new mongoose.Schema(
         },
         Telefono:{
             type: Number,
+            uniqued: false,
+            required: false
+        },
+        PrimeraN:{
+            type: Date,
+            uniqued: false,
+            required: false
+        },
+        UltimaN:{
+            type: Date,
+            uniqued: false,
+            required: false
+        },
+        CargaF:{
+            type: Number,
+            uniqued: false,
+            required: false
+        },
+        Comment:{
+            type: String,
+            uniqued: false,
+            required: false
+        },
+        Status:{
+            type: String,
             uniqued: false,
             required: false
         }
