@@ -19,11 +19,16 @@
   Ing. Freddy David Ramirez
 
 # Funcionalidades
-
+  -Registrarse
+  -Logearse
+  -Agregar un usuario
+  -Editar un usuario
+  -Eliminar un usuario
   -Agregar reserva
   -Listar reserva 
   -Eliminar reserva
   -Editar reserva
+  -Enviar confirmación de reserva por Email
 
 # Instrucciones
 
