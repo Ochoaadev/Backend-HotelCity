@@ -148,6 +148,6 @@ Paso 11
 
 Paso 12
 
-- Descarga el repositorio de Front-End y sigue sus intrucciones (https://github.com/JMCA2805/MyBox-FrontEnd)
+- Descarga el repositorio de Front-End y sigue sus intrucciones (https://github.com/Ochoaadev/HotelCity-Front.git)
 
-      git clone https://github.com/JMCA2805/MyBox-FrontEnd.git
+      git clone https://github.com/Ochoaadev/HotelCity-Front.git
