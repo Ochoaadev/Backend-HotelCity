@@ -6,6 +6,7 @@ const connection = require('./src/config/conexion');
 const cors = require("cors");
 const { swaggerDocs } = require("./swagger");
 const fs = require('fs')
+const multer = require("multer");
 
 var indexRouter = require("./src/routes/routes");
 
@@ -16,6 +17,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());  
+
+const storage = multer.diskStorage({
+   destination: path.join(__dirname, "src/public"),
+   filename: (req, file, cb) => {
+     cb(null, new Date().getTime() + path.extname(file.originalname));
+   },
+ });
+ 
+ app.use(multer({ storage: storage }).single("image"));
+
+
+ //-----------------------------------------
 
 
 app.use('/', indexRouter);
