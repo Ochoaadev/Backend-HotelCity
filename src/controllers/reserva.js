@@ -41,4 +41,22 @@ const Add_Reservas = async(req, res) => {
        .json({ message: "Error al intentar agregar la Reserva", status: 500 });
     }
  }
- module.exports = { Add_Reservas};
+
+ //----------------------------------------------------------------------------------------------------------
+//Iniciar la función para  consultar las reservas llamada cat_list.
+const Get_Reservas = async (req, res) => {
+   try {
+      //Se inicializa cateroias con el model.find realizando la busqueda de los records.
+      const reservas = await model.find();
+      //Se valida la respuesta de la base de datos.
+      res.status(200).json(reservas);
+   } catch (error) {
+      //Se muestra el error recibido en console log, en caso de ser asi.
+      console.log("Error:", error);
+      //Si la respuesta es 500 algun parametro no coincide y se retorna el mensaje o por conexión.
+      res
+      .status(500)
+      .json({ message: "Por favor verificar, error al intentar consultar las reservas.", status: 500 });
+   }
+};
+ module.exports = { Add_Reservas, Get_Reservas};
