@@ -9,7 +9,8 @@ const { Add_Reservas } = require("../controllers/reserva");
 
 const { GetUser, deleteUser, editUser, updatePassword, user_list } = require("../controllers/userControllers")
 const { AggRoom, ListarRoom, UpdRoom, DeleteRoom } = require('../controllers/roomController');
-
+//----------- Validar token--------------
+const { Authenticate, ValidateRol } = require("../middlewares/JWT");
 // -------------------------Rutas-------------------
 
 //Usuario
@@ -40,4 +41,6 @@ router.post("/login", login);
 //Reservas
 router.post("/Add_Reservas", Add_Reservas);
 
+//Validar Token
+router.post("/Validate", Authenticate, ValidateRol);
 module.exports = router;
