@@ -4,6 +4,11 @@ const fs = require('fs')
 const path = require('path')
 
 const AggRoom = async(req,res)=>{
+    // Agregar esta verificación para asegurarse de que req.file esté definido
+    if (!req.file) {
+        return res.status(400).json({message: 'No se proporcionó ninguna imagen', status:400});
+    }
+
     const image_url = await UploadImage(req.file.path);
 
     try{
@@ -28,7 +33,6 @@ const AggRoom = async(req,res)=>{
         res.status(500).json({message: "Error al agregar los datos de la habitación, vuelve a intentar"})
     }
 }
-
 const ListarRoom = async(req, res)=>{
     try{
         const room = await model.find();

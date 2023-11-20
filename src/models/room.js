@@ -5,6 +5,9 @@ const rooms = new mongoose.Schema(
         Tipo:{
             type:String
         },
+        imagen:{
+            type:String
+        },
         Descripcion:{
             type:String
         },
