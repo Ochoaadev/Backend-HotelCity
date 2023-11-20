@@ -46,6 +46,10 @@ const reserva = new mongoose.Schema(
             type: String,
             uniqued: false,
             required: false
+        },
+        Motivo:{
+            type:String,
+            required: false
         }
     }
 )

@@ -4,7 +4,7 @@ var router = express.Router();
 
 // Registrar y Login
 const { login, register } = require("../controllers/Users/Login-Register");
-const { Add_Reservas, Get_Reservas } = require("../controllers/reserva");
+const { Add_Reservas, Get_Reservas, Edit_Reservas } = require("../controllers/reserva");
 //Usuario
 
 const { GetUser, deleteUser, editUser, updatePassword, user_list } = require("../controllers/userControllers")
@@ -41,6 +41,8 @@ router.post("/login", login);
 //Reservas
 router.post("/Add_Reservas", Add_Reservas);
 router.get("/ListarReservas", Get_Reservas);
+router.put("/Edit_Reservas/:id", Edit_Reservas);
+
 
 
 //Validar Token
