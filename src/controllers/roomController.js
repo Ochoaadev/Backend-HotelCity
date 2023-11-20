@@ -88,13 +88,13 @@ const DeleteRoom = async(req, res)=>{
         }
 
         res.status(200).json({message:'Los datos de la habitación se han eliminado correctamente', status:200, deleted:deleted});
-    }catch(error){
-        if(err.name === 'CastError' && err.kind === 'ObjectId'){
-            return res.status(400).send('Error: El ID de la habitación proporcionada no es válido.');
+    } catch (err) {
+        if (err.name === 'CastError' && err.kind === 'ObjectId') {
+           return res.status(400).send('Error: El ID del producto proporcionado no es válido.');
         } else {
-           return res.status(500).send('Error al intentar eliminar la habitación.');
+           return res.status(500).send('Error al intentar eliminar el item.');
         }
-    }
-}
+   }
+  };
 
 module.exports = { AggRoom, ListarRoom, UpdRoom, DeleteRoom };
